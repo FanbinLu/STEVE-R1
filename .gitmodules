@@ -1,0 +1,6 @@
+[submodule "OSWorld"]
+	path = OSWorld
+	url = https://github.com/FanbinLu/OSWorld
+[submodule "WindowsAgentArena"]
+	path = WindowsAgentArena
+	url = https://github.com/FanbinLu/WindowsAgentArena
