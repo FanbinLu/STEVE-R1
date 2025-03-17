@@ -13,8 +13,8 @@ We evaluate the performance of the STEVE-R1 agent on both in-domain (Windows 11 
 </div>
 
 ## Release
-- Currently only the step-verified 
-- 🔥 An improved version <b>STEVE-R1<b> is released with long reasoning ability and long image context. We extend the model context length to <b>128K</b> with at most <b>32 screenshot</b> inputs for a single task. The model response length is greatly improved with deepseek-R1 distillation, see the [examples](https://github.com/FanbinLu/STEVE-R1/tree/main/examples). We release the [training data](), [models](https://huggingface.co/Fanbin/STEVE-R1-7B-SFT), and [evaluation trajectories](https://huggingface.co/datasets/Fanbin/waa_steve_trajectories).
+- Currently only the SFT STEVE-R1 model with step-verified training data is released. RL tunning is in progress.
+- 🔥 An improved version <b>STEVE-R1</b> is released with long reasoning ability and long image context. We extend the model context length to <b>128K</b> with at most <b>32 screenshot</b> inputs for a single task. The model response length is greatly improved with deepseek-R1 distillation, see the [examples](https://github.com/FanbinLu/STEVE-R1/tree/main/examples). We release the [training data](), [models](https://huggingface.co/Fanbin/STEVE-R1-7B-SFT), and [evaluation trajectories](https://huggingface.co/datasets/Fanbin/waa_steve_trajectories).
 - We release the paper of STEVE: Step Verification Pipeline for Computer-use Agent Training. We propose a single-frame computer-use 7B agent trained with SFT & step-verified KTO. 
 
 
