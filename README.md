@@ -19,9 +19,7 @@ We evaluate the performance of the **STEVE-R1 agent** on both in-domain WindowsA
 
 
 ## Trajectory Data
-We provide some example trajectories of STEVE-R1 on OSWorld in [examples/](https://github.com/FanbinLu/STEVE-R1/blob/main/examples/multi_apps/227d2f97-562b-4ccb-ae47-a5ec9e142fbb/plan_result_full-step_10_20250227%40005839.txt). Please see the [full trajectories](https://huggingface.co/datasets/Fanbin/waa_steve_trajectories) for more trajectories .
-
-A quick preview of the reasoning agent STEVE-R1 on the task [OSWorld/multi_apps](https://github.com/FanbinLu/STEVE-R1/blob/main/examples/multi_apps/227d2f97-562b-4ccb-ae47-a5ec9e142fbb/plan_result_full-step_10_20250227%40005839.txt)
+We provide some example trajectories of STEVE-R1 on OSWorld in [examples/](https://github.com/FanbinLu/STEVE-R1/blob/main/examples/multi_apps/227d2f97-562b-4ccb-ae47-a5ec9e142fbb/plan_result_full-step_10_20250227%40005839.txt). Please see the [full trajectories](https://huggingface.co/datasets/Fanbin/waa_steve_trajectories) for more trajectories. A quick preview of the reasoning agent STEVE-R1 on the task [OSWorld/multi_apps](https://github.com/FanbinLu/STEVE-R1/blob/main/examples/multi_apps/227d2f97-562b-4ccb-ae47-a5ec9e142fbb/plan_result_full-step_10_20250227%40005839.txt)
 
 ````
 User task: I've stored my .xcf file on the Desktop. Can you assist me in copying the image and pasting it into a LibreOffice Writer document? Save the document as 'image.docx' on the Desktop, please.
@@ -114,6 +112,18 @@ For WindowsAgentArena,
 nohup bash ./start_server.sh &
 cd WindowsAgentArena/scripts;
 bash start_multienv_steve_evaluation.sh;
+```
+
+## Model Deployment
+To start vllm server,
+```bash
+python -m -m vllm.entrypoints.openai.api_server --served-model-name cot_qwen2vl \
+    --model <path to model> --limit-mm-per-prompt images=25 -tp <tp> \
+    --chat-template ./chat_template_qwen2vl.jinja 
+```
+Then you can run the multiframe demo of STEVE-R1 with:
+```python
+python multiframe_demo.py
 ```
 
 ## Acknowledgement
