@@ -6,7 +6,7 @@
 <!-- <a href='https://huggingface.co/collections/zszhong/lyra-evaluation-'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Evaluation-yellow'></a><br> -->
 
 
-We evaluate the performance of the STEVE-R1 agent on both in-domain (Windows 11 OS) and out-of-domain (Ubuntu OS) scenarios. The evaluation involved 16 attempts per task, with task completion rates recorded as the primary metric. In the in-domain Windows 11 setting, the STEVE-R1 agent demonstrated a 14% higher task completion rate compared to the previous open-source state-of-the-art model, UI-TARS-7B-DPO. Furthermore, in the out-of-domain Ubuntu OS environment, where STEVE-R1 was not explicitly trained, it still achieved a 7% higher task completion rate than UI-TARS-7B-DPO.
+We evaluate the performance of the **STEVE-R1 agent** on both in-domain WindowsAgentArena (Windows 11 OS) and out-of-domain OSWorld (Ubuntu OS) benchmarks. The evaluation involves 16 attempts per task, with task completion rates recorded as the primary metric. In the in-domain Windows 11 setting, the STEVE-R1 agent demonstrated a **14%** higher task completion rate compared to the previous open-source state-of-the-art model, UI-TARS-7B-DPO. Furthermore, in the out-of-domain Ubuntu OS environment, where STEVE-R1 was not explicitly trained, it still achieved a **7%** higher task completion rate than UI-TARS-7B-DPO.
 
 <div align=center>
 <img width="98%" src="assets/performance.svg"/>
@@ -14,17 +14,18 @@ We evaluate the performance of the STEVE-R1 agent on both in-domain (Windows 11 
 
 ## Release
 - Currently only the SFT STEVE-R1 model with step-verified training data is released. RL tunning is in progress.
-- 🔥 An improved version <b>STEVE-R1</b> is released with long reasoning ability and long image context. We extend the model context length to <b>128K</b> with at most <b>32 screenshot</b> inputs for a single task. The model response length is greatly improved with deepseek-R1 distillation, see the [examples](https://github.com/FanbinLu/STEVE-R1/tree/main/examples). We release the [training data](), [models](https://huggingface.co/Fanbin/STEVE-R1-7B-SFT), and [evaluation trajectories](https://huggingface.co/datasets/Fanbin/waa_steve_trajectories).
+- 🔥 An improved version **STEVE-R1** is released with long reasoning ability and long image context. We extend the model context length to <b>128K</b> with at most <b>32 screenshot</b> inputs for a single task. The model response length is greatly improved with deepseek-R1 distillation, see the [examples](https://github.com/FanbinLu/STEVE-R1/tree/main/examples). We release the [training data](), [models](https://huggingface.co/Fanbin/STEVE-R1-7B-SFT), and [evaluation trajectories](https://huggingface.co/datasets/Fanbin/waa_steve_trajectories).
 - We release the paper of STEVE: Step Verification Pipeline for Computer-use Agent Training. We propose a single-frame computer-use 7B agent trained with SFT & step-verified KTO. 
 
 
 ## Trajectory Data
-We provide some example trajectories of STEVE-R1 on OSWorld in examples/. Please check the [full trajectories](https://huggingface.co/datasets/Fanbin/waa_steve_trajectories) for more results.
+We provide some example trajectories of STEVE-R1 on OSWorld in [examples/](https://github.com/FanbinLu/STEVE-R1/blob/main/examples/multi_apps/227d2f97-562b-4ccb-ae47-a5ec9e142fbb/plan_result_full-step_10_20250227%40005839.txt). Please see the [full trajectories](https://huggingface.co/datasets/Fanbin/waa_steve_trajectories) for more trajectories .
 
-A quick preview of the reasoning agent's response:
+A quick preview of the reasoning agent STEVE-R1 on the task [OSWorld/multi_apps](https://github.com/FanbinLu/STEVE-R1/blob/main/examples/multi_apps/227d2f97-562b-4ccb-ae47-a5ec9e142fbb/plan_result_full-step_10_20250227%40005839.txt)
 
-User task: **I've stored my .xcf file on the Desktop. Can you assist me in copying the image and pasting it into a LibreOffice Writer document? Save the document as 'image.docx' on the Desktop, please.** [OSWorld/multi_apps](https://github.com/FanbinLu/STEVE-R1/blob/main/examples/multi_apps/227d2f97-562b-4ccb-ae47-a5ec9e142fbb/plan_result_full-step_10_20250227%40005839.txt)
-````model outputs
+````
+User task: I've stored my .xcf file on the Desktop. Can you assist me in copying the image and pasting it into a LibreOffice Writer document? Save the document as 'image.docx' on the Desktop, please.
+Model response: 
 <|begin_of_thought|>
 Since it is the first step of the task, I will first think thoroughly about the task.
 
@@ -114,3 +115,9 @@ nohup bash ./start_server.sh &
 cd WindowsAgentArena/scripts;
 bash start_multienv_steve_evaluation.sh;
 ```
+
+## Acknowledgement
+We would like to thank the following repos for their great work:
+- Benchmarks: [OSWorld](https://github.com/xlang-ai/OSWorld), [WindowsAgentArena](https://github.com/microsoft/WindowsAgentArena)
+- This work finetunes models from [UI-TARS](https://github.com/bytedance/UI-TARS).
+- This work utlizes GUI grounding model [Omni-Parser](https://github.com/microsoft/OmniParser).
