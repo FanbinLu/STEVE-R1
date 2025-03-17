@@ -117,8 +117,8 @@ bash start_multienv_steve_evaluation.sh;
 ## Model Deployment
 To start vllm server,
 ```bash
-python -m -m vllm.entrypoints.openai.api_server --served-model-name cot_qwen2vl \
-    --model <path to model> --limit-mm-per-prompt images=25 -tp <tp> \
+python -m vllm.entrypoints.openai.api_server --served-model-name cot_qwen2vl \
+    --model <path to model> --limit-mm-per-prompt image=25 -tp <tp> \
     --chat-template ./chat_template_qwen2vl.jinja 
 ```
 Then you can run the multiframe demo of STEVE-R1 with:

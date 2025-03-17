@@ -17,7 +17,7 @@ client = OpenAI(
 with open(screenshot1_path, 'rb') as image1_file:
     screenshot1_string = base64.b64encode(image1_file.read()).decode("utf-8")
 
-with open(screenshot2_path, 'rb') as image1_file:
+with open(screenshot2_path, 'rb') as image2_file:
     screenshot2_string = base64.b64encode(image2_file.read()).decode("utf-8")
 
 round1_response = client.chat.completions.create(
@@ -26,7 +26,7 @@ round1_response = client.chat.completions.create(
         {
             "role": "user",
             "content": [
-                {"type": "text", "text": steve_system_prompt}
+                {"type": "text", "text": steve_system_prompt},
                 {"type": "image_url", "image_url": {"url": f"data:image/png;base64,{screenshot1_string}"}},
                 {"type": "text", "text": instruction}
             ],
@@ -48,8 +48,8 @@ round2_response = client.chat.completions.create(
         {
             "role": "user",
             "content": [
-                {"type": "text", "text": steve_system_prompt}
-                {"type": "image_url", "image_url": {"url": f"data:image/png;base64,{screenshot2_string}"}},
+                {"type": "text", "text": steve_system_prompt},
+                {"type": "image_url", "image_url": {"url": f"data:image/png;base64,{screenshot1_string}"}},
                 {"type": "text", "text": instruction}
             ],
         },
@@ -60,7 +60,7 @@ round2_response = client.chat.completions.create(
         {
             "role": "user",
             "content": [
-                {"type": "image_url", "image_url": {"url": f"data:image/png;base64,{encoded_string}"}},
+                {"type": "image_url", "image_url": {"url": f"data:image/png;base64,{screenshot2_string}"}},
                 {"type": "text", "text": instruction}
             ]
         }
