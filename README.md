@@ -22,7 +22,8 @@ We evaluate the performance of the STEVE-R1 agent on both in-domain (Windows 11 
 We provide some example trajectories of STEVE-R1 on OSWorld in examples/. Please check the [full trajectories](https://huggingface.co/datasets/Fanbin/waa_steve_trajectories) for more results.
 
 A quick preview of the reasoning agent's response:
-User task: I've stored my .xcf file on the Desktop. Can you assist me in copying the image and pasting it into a LibreOffice Writer document? Save the document as 'image.docx' on the Desktop, please. (OSWorld/multi_apps/227d2f97-562b-4ccb-ae47-a5ec9e142fbb)
+
+User task: **I've stored my .xcf file on the Desktop. Can you assist me in copying the image and pasting it into a LibreOffice Writer document? Save the document as 'image.docx' on the Desktop, please.** [OSWorld/multi_apps](https://github.com/FanbinLu/STEVE-R1/blob/main/examples/multi_apps/227d2f97-562b-4ccb-ae47-a5ec9e142fbb/plan_result_full-step_10_20250227%40005839.txt)
 ````model outputs
 <|begin_of_thought|>
 Since it is the first step of the task, I will first think thoroughly about the task.
