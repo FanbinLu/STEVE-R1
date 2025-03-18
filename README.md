@@ -117,8 +117,8 @@ We compare models' performance across different execution lengths. A RESET actio
 | STEVE-R1-SFT (40 steps) | 20.1 ± 2.2 | 11.5 ± 1.2 (OOD) |
 | STEVE-R1-SFT (60 steps) | **22.3** ± 2.1 | 12.8 ± 1.2 (OOD) |
 | **Multiple Trials** | | |
-| UI-TARS-7B-DPO (20 steps, 16 trials) | 33.1 | 25.2 |
-| STEVE-R1-SFT (20 steps, 16 trials) | **46.8** | **31.4** (OOD) |
+| UI-TARS-7B-DPO (20 steps, pass@16) | 33.1 | 25.2 |
+| STEVE-R1-SFT (20 steps, pass@16) | **46.8** | **31.4** (OOD) |
 
 ## RUN
 Please follow the installation guide of OSWorld and WindowsAgentArena.
