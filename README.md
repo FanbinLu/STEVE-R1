@@ -9,7 +9,7 @@
 We evaluate the performance of the **STEVE-R1 agent** on both in-domain WindowsAgentArena (Windows 11 OS) and out-of-domain OSWorld (Ubuntu OS) benchmarks. The evaluation involves 16 attempts per task, with task completion rates recorded as the primary metric. In the in-domain Windows 11 setting, the STEVE-R1 agent demonstrated a **14%** higher task completion rate compared to the previous open-source state-of-the-art model, UI-TARS-7B-DPO. Furthermore, in the out-of-domain Ubuntu OS environment, where STEVE-R1 was not explicitly trained, it still achieved a **7%** higher task completion rate than UI-TARS-7B-DPO.
 
 <div align=center>
-<img width="98%" src="assets/performance.svg"/>
+<img width="98%" src="assets/performance.png"/>
 </div>
 
 ## Release
@@ -98,7 +98,10 @@ We compare models' performance across different execution lengths. A RESET actio
 | **Our Model**  | | |
 | STEVE-R1-SFT (20 steps) | 17.5 ± 2.0 | 9.6 ± 1.1（OOD）|
 | STEVE-R1-SFT (40 steps) | 20.1 ± 2.2 | 11.5 ± 1.2 (OOD) |
-| STEVE-R1-SFT (60 steps) | 22.3 ± 2.1 | 12.8 ± 1.2 (OOD) |
+| STEVE-R1-SFT (60 steps) | **22.3** ± 2.1 | 12.8 ± 1.2 (OOD) |
+| **Multiple Trials** | | |
+| UI-TARS-7B-DPO (20 steps, 16 trials) | 33.1 | 25.2 |
+| STEVE-R1-SFT (20 steps, 16 trials) | **46.8** | **31.4** (OOD) |
 
 ## RUN
 Please follow the installation guide of OSWorld and WindowsAgentArena.
