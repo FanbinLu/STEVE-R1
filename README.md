@@ -88,21 +88,19 @@ computer.mouse.double_click() # Open GIMP
 ## Videos of Successful Tasks
 - [Chrome](https://github.com/FanbinLu/STEVE-R1/tree/main/examples/chrome/bb5e4c0d-f964-439c-97b6-bdb9747de3f4): Can you make Bing the main search thingy when I look stuff up on the internet?
 
-https://github.com/user-attachments/assets/bf81eb2b-373b-487a-aa5e-0a6526ccb6c3
-
+https://github.com/user-attachments/assets/9c2cbe59-40a4-4608-81a4-1f39388917b7
 
 - [VsCode](https://github.com/FanbinLu/STEVE-R1/tree/main/examples/vs_code/e2b5e914-ffe1-44d2-8e92-58f8c5d92bb2): Please modify VS Code's settings to disable error reporting for Python missing imports.
 
-https://github.com/user-attachments/assets/600ad1a7-7219-4db7-a8e1-2b3761ba66f6
+https://github.com/user-attachments/assets/2596ee91-0415-424f-b30d-81f566f6f30e
 
 - [LibreOffice](https://github.com/FanbinLu/STEVE-R1/tree/main/examples/libreoffice_writer/1273e544-688f-496b-8d89-3e0f40aa0606) Copy the \"Revenue\" column along with the header to a new sheet.
 
-https://github.com/user-attachments/assets/ec5e407b-8939-4c18-82b4-431e2730e2a5
+https://github.com/user-attachments/assets/1506473e-0771-42b0-86fa-cf2f571d0a2d
 
 - [Multi Apps](https://github.com/FanbinLu/STEVE-R1/tree/main/examples/multi_apps/227d2f97-562b-4ccb-ae47-a5ec9e142fbb): I've stored my .xcf file on the Desktop. Can you assist me in copying the image and pasting it into a LibreOffice Writer document? Save the document as 'image.docx' on the Desktop, please.
 
-https://github.com/user-attachments/assets/5653b933-0f3d-46f0-af5e-b4eddf0a438b
-
+https://github.com/user-attachments/assets/17bd4a13-2d46-4424-822d-a129408a638f
 
 ## Execution Length
 We compare models' performance across different execution lengths. A RESET action is triggered to reset the environment if the model fails to complete the task within 20 steps. The accuracy of the task is only measure when the agent outputs DONE/FAIL/CALL_USER or the maximum execution length is reached. We show that a 5% accuracy improvement in STEVE-R1 by increasing the execution length per attempt.
